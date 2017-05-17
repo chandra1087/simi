@@ -3,7 +3,7 @@
   /***********************/
  
 $aing = array(
-    "tkn"=>"...", // isi dengan token dari akun bot Anda
+    "tkn"=>"399774682:AAEHKXi3YyRI_-hi7qeQr5xtn2D9Qd7P-2o", // isi dengan token dari akun bot Anda
     "log"=>"piro.txt",
     "udh"=>"simpen.txt"
 );
@@ -33,7 +33,7 @@ function simpen($dmn, $apa) {
     fclose(fopen($dmn, "a+"));
 }
  
-$upd = json_decode(hajar("https://api.telegram.org/bot" . $aing['tkn'] . "/getUpdates"), true); // mengambil pesan dari akun bot
+$upd = json_decode(hajar("https://api.telegram.org/bot" . $aing['399774682:AAEHKXi3YyRI_-hi7qeQr5xtn2D9Qd7P-2o'] . "/getUpdates"), true); // mengambil pesan dari akun bot
 $buka = fopen($aing['log'], "r");
 $scan = fscanf($buka, "%d");
  
@@ -61,7 +61,7 @@ if ($upd['ok'] == 1) {
             }
         } else {
             # ini kondisi dimana server SimSimi menerima pesan bot dengan baik
-           $krm = json_decode(hajar("https://api.telegram.org/bot" . $aing['tkn'] . "/sendMessage", array(
+           $krm = json_decode(hajar("https://api.telegram.org/bot" . $aing['399774682:AAEHKXi3YyRI_-hi7qeQr5xtn2D9Qd7P-2o'] . "/sendMessage", array(
                 "chat_id"=>$psn['chat']['id'],
                 "text"=>$simi['res'],
                 "reply_to_message_id"=>$psn['message_id'])), true);
